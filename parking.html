@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Bãi Đỗ Xe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quản Lý Bãi Đỗ Xe</h1>
+        <button onclick="logout()">Đăng Xuất</button>
+        <div class="actions">
+            <input type="text" id="search" placeholder="Nhập biển số xe..." onkeyup="searchCar()">
+            <button onclick="addCar()">Thêm xe mới</button>
+        </div>
+        <table id="parkingTable">
+            <thead>
+                <tr>
+                    <th>Biển Số</th>
+                    <th>Loại Xe</th>
+                    <th>Thời Gian Vào</th>
+                    <th>Vị Trí Đỗ</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>51A-12345</td>
+                    <td>Ô tô</td>
+                    <td>10:30 AM</td>
+                    <td>A1</td>
+                    <td><button onclick="removeCar(this)">Xóa</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

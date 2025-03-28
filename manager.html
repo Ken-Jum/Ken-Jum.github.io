@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Quản Lý</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Chào mừng Quản Lý</h1>
+        <button onclick="logout()">Đăng Xuất</button>
+        <ul>
+            <li><a href="#">Quản lý bãi đỗ xe</a></li>
+            <li><a href="#">Báo cáo</a></li>
+            <li><a href="#">Xem Camera</a></li>
+        </ul>
+    </div>
+    <script>
+        function logout() {
+            localStorage.removeItem('userRole');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

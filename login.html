@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Đăng Nhập</h2>
+        <input type="text" id="username" placeholder="Tên đăng nhập">
+        <input type="password" id="password" placeholder="Mật khẩu" onkeydown="checkEnter(event)">
+        <button onclick="login()">Đăng Nhập</button>
+        <button class="back-button" onclick="location.href='index.html'">Quay Lại</button>
+    </div>
+
+    <script>
+        function login() {
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+
+            if (user === "admin" && pass === "123") {
+                localStorage.setItem("userRole", "manager");
+                window.location.href = "manager.html";
+            } else if (user === "staff" && pass === "123") {
+                localStorage.setItem("userRole", "staff");
+                window.location.href = "staff.html";
+            } else {
+                alert("Sai tài khoản hoặc mật khẩu!");
+            }
+        }
+
+        // Hàm kiểm tra khi nhấn phím Enter
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                login();
+            }
+        }
+    </script>
+</body>
+</html>
